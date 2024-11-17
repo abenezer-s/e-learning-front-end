@@ -1,0 +1,115 @@
+.join {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+.learn {
+    display: flex;
+    flex-direction: column;
+    background-color: #5E75E6;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.451);
+}
+
+.learnJoin {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 50%;
+    border: none;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.learnJoinButton {
+    display: flex;
+    background-color: white;
+    width: 80%;
+    height: 30%;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5%;
+    padding: 5%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.learnJoinButton:hover {
+    box-shadow: 0 0 15px rgba(216, 211, 211, 0.521);
+    color: red;    
+} 
+
+.styledLearn {
+    color: #5E75E6;  
+}
+
+.girl {
+    width: 80%;
+}
+
+.teach {
+    display: flex;
+}
+
+@media (min-width: 811px) {
+    .join {
+        display: flex;
+        width: 100vw;
+    
+    }
+    .learn {
+        display: flex;
+        flex-direction: row;
+        background-color: #5E75E6;
+        color: white;
+        height: 600px;
+    }
+    .learnJoin {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 50%;
+        border: none;
+        background: transparent;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .learnJoinButton {
+        display: flex;
+        background-color: white;
+        width: 50%;
+        height: 20%;
+        border: none;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 5%;
+        padding: 5%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .learnJoinButton:hover {
+        box-shadow: 0 0 50px rgba(216, 211, 211, 0.521);
+
+    } 
+    
+    .styledLearn {
+        color: #5E75E6;  
+    }
+    
+    .girl {
+        width: 50%;
+    }
+
+    .teach {
+        display: flex;
+    }
+}

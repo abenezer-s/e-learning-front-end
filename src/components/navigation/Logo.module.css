@@ -1,0 +1,14 @@
+.logo {
+    color:  #5E75E6;
+    margin-right: 1%;
+    justify-self: start;
+}
+
+@media (min-width: 811px) {
+    .logo {
+        color:  #5E75E6;
+        margin-left: 0%;
+        justify-self: start;
+        order: -1;
+    }
+}

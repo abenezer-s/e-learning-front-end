@@ -1,0 +1,21 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  margin: 0%;
+  padding: 0%;
+  border: none;
+  overflow: hidden;
+  background-color: white;
+}
+
+@media (min-width: 811px){
+  .Home {
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    padding: 0%;
+    border: none;
+    overflow: hidden;
+
+  }
+}

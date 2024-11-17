@@ -1,0 +1,32 @@
+.nav {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+    padding-right: 50%;
+    width: 90%;
+    height: 65px;
+    border: none;
+    border-bottom-width: 1px;
+    overflow: hidden;
+}
+
+@media (min-width: 811px){
+    .nav {
+        display: flex;
+        align-items: center;
+        margin-left: 0%;
+        padding-left: 3.75%;
+        padding-right: 1%;
+        width: 92.5%;
+        height: 65px;
+        border: none;
+        border-bottom-width: 1px;
+        overflow: hidden;
+    }
+
+    .name {
+        color:  rgb(11, 11, 243);
+    }
+}
