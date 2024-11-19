@@ -34,7 +34,7 @@
         position: relative;
         width: 465px;
         height: 44px;
-        border:0.1px solid  rgb(177, 177, 177);
+        border:0.1px solid  #D8DBBD;
         border-radius: 50px;
         overflow:hidden;
         justify-content: center;
@@ -62,7 +62,8 @@
         border-radius: 50px;
         justify-content: center;
         align-items: center;
-        background-color: #5E75E6;
+        /* background-color: #5E75E6; */
+        background-color: #2A3663;
         right: 6px;
         cursor: pointer;
     

@@ -11,7 +11,7 @@ function SideNavBar({clicked, setClicked}) {
             { clicked ? 
             <>
                 <button onClick={closeSideNav} className={styles.close}> 
-                    <img src="/src/assets/img/xBlue.png" alt="close" width={20} />
+                    <img src="/src/assets/img/close-circle-svgrepo-com.png" alt="close" width={40} />
                 </button>
                 <ExploreButton />
                 <div className={styles.footer}>

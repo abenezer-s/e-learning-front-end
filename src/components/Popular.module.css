@@ -1,0 +1,10 @@
+.popular {
+    display: flex;
+    flex-direction: column;
+    width: 99.81vw;
+    height: 400px;
+    overflow: auto;    
+    align-items: center;    
+    background-color: #4676d152;
+}
+

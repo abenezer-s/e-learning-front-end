@@ -1,8 +1,7 @@
 import styles from "./Home.module.css";
 import Nav from "./navigation/Nav";
-import Menu from "./navigation/Menu";
 import Join from "./Join";
-import Roles from "./Roles";
+import PopularSection from "./PopularSection";
 import Popular from "./Popular";
 import New from "./New";
 import Explore from "./Explore";
@@ -18,8 +17,7 @@ function Home() {
           <Nav />
           <SideNavBar />
           <Join />
-          <Roles />
-          <Popular />
+          <PopularSection />
           <New />
           <Explore />
           <Outcomes />
