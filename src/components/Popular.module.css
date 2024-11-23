@@ -2,9 +2,18 @@
     display: flex;
     flex-direction: column;
     width: 99.81vw;
-    height: 400px;
+    height:80%;
     overflow: auto;    
     align-items: center;    
+    justify-content: center;
     background-color: #4676d152;
+}
+
+@media (min-width: 768px){
+
+    .popular {
+        
+        flex-direction: row;
+    }
 }
 

@@ -3,7 +3,7 @@ import ContentContainer from "./ContentContainer"
 function Popular() {
     return (
         <div className={styles.popular}>
-            <ContentContainer />
+            
             <ContentContainer />
             <ContentContainer />
             <ContentContainer />

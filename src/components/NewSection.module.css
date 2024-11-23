@@ -1,4 +1,6 @@
-.popularSection {
+.newSection {
+    display: flex;
+    flex-direction: column;
     height: 900px;
     font-size: large;
     margin-top: 2%;
@@ -6,7 +8,7 @@
 }
 
 @media (min-width: 768px){
-    .popularSection {
+    .newSection {
         height: 600px;
         font-size: large;
         margin-top: 2%;

@@ -1,16 +1,19 @@
-.popularSection {
-    height: 900px;
+.new {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
     font-size: large;
-    margin-top: 2%;
+    margin-top: 0;
     box-shadow: 0 0 10px rgba(4, 4, 4, 0.145);
+    justify-content: center;
 }
 
 @media (min-width: 768px){
-    .popularSection {
+    .new {
         height: 600px;
         font-size: large;
-        margin-top: 2%;
         box-shadow: 0 0 10px rgba(4, 4, 4, 0.145);
+        flex-direction: row;
     }
     
     
