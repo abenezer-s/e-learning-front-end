@@ -1,0 +1,33 @@
+.explore {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    
+}
+.section {
+    margin-left: 5%;
+} 
+.categories {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5%;
+}
+
+@media (min-width:768px){
+    .explore {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+    }
+    
+    .categories {
+        flex-direction: row;
+        justify-content: start;
+        flex-wrap: wrap;
+        align-content: start;
+    }
+
+}

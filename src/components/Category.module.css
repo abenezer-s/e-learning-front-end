@@ -1,0 +1,54 @@
+.category {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    margin: 2%;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    cursor: pointer;
+
+}
+
+.icon {
+    border: 1px solid black;
+    margin-bottom: 5%;
+}
+
+
+.categoryButton {
+    background: transparent;
+    cursor: pointer;
+}
+
+.categoryButton:hover {
+    border-bottom: 2px solid red;
+}
+
+@media (min-width:768px){
+    .category {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid red;
+        margin: 2%;
+        align-items: center;
+        justify-content: center;
+        padding: 1%;
+    
+    }
+    
+    .icon {
+        border: 1px solid black;
+        margin-bottom: 5%;
+    }
+    
+    
+    .categoryButton {
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    .categoryButton:hover {
+        border-bottom: 2px solid red;
+    }
+}

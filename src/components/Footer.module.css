@@ -1,0 +1,11 @@
+.footer {
+    height: 200px;
+    background-color: rgba(231, 231, 231, 0.558);
+}
+
+@media (min-width: 768px){
+    .footer {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
