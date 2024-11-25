@@ -1,0 +1,108 @@
+.auth {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* border: 1px solid red; */
+    color:  red;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.authCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 90%;
+    height: 90%;
+
+}
+
+.signup {
+    display: flex;
+    /* border: 1px solid red; */
+    width: 90%;
+    height: 5%;
+    margin: 5%;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    /* margin: 5%; */
+    display: flex;
+    height: 100%;
+    width: 4%;
+    justify-content: end;
+    align-items: center;
+    margin-left: auto;
+}
+
+.button button {
+    border: none;
+    background: transparent;
+    justify-self: flex-start;
+}
+
+.button button:hover {
+    border-bottom: 1px solid blue;
+}
+.image {
+    display: none;
+}
+
+@media (min-width:768px){
+    .auth {
+        display: flex;
+        height: 100vh;
+        border: 1px solid blue;
+        color:  red;
+        align-items: center;
+    
+    }
+    
+    
+    .authCard {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        height: 80%;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    
+    .signup {
+        justify-self: center;
+        width: 80%;
+        margin-top: 0;
+        margin-bottom:2%;
+        margin-left: 0%;
+        margin-right: 0;
+    }
+    .button {
+        align-self: end;
+        /* margin-bottom: 5%; */
+    }
+    
+    .button button {
+        border: none;
+        background: transparent;
+    }
+    
+    .button button:hover {
+        border-bottom: 1px solid blue;
+    }
+    .image {
+        display: flex;
+        width: 50%;
+    }
+
+    .image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    
+}
