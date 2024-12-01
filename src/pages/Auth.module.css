@@ -96,6 +96,9 @@
     .image {
         display: flex;
         width: 50%;
+        margin: 1.25%;
+        border-radius: 15px;
+        overflow: hidden;
     }
 
     .image img {

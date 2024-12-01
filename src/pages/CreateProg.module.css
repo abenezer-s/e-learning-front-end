@@ -1,0 +1,9 @@
+.createProg {
+    border: 1px solid blue;
+}
+
+.addCourse {
+    border: 1px solid blue;
+    background-color: grey;
+    color: white;
+}
