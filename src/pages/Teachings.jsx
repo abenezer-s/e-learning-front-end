@@ -7,7 +7,9 @@ function Teachings(){
         <div className={styles.teachings}>
             <button> Courses</button>
             <button> programs</button>
+            <Link>
             <ContentContainer />
+            </Link>
             <Footer />
             
         </div>

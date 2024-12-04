@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 function CreateCourse(){
     return (
         <div className={styles.createCourse}>
-            <h1>Create Program</h1>
+            <h1>Create Course</h1>
             <Link to="/dashboard/create"> back </Link>
             <div className={styles.fields}>
                 <form >
@@ -14,11 +14,10 @@ function CreateCourse(){
                 </form>
 
                 <div>
-                    <h2>add modules (optional)</h2>
-                    <div className={styles.addModule}>
-                        modules you own will appear here. <br/>
-                        you can skip to next step
-                    </div>
+                    <h2>add module</h2>
+                    <Link to="/dashboard/create/module">
+                        <button>add module</button>
+                    </Link>
                     <button type="submit"> finish</button>
                 </div>
                 

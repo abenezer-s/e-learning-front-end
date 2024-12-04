@@ -5,6 +5,13 @@ function CourseModule() {
     return (
         <div className={styles.courseModule}>
             <h1>module</h1>
+            <button>edit module</button>
+            <div>
+                <h1>module name</h1>
+                <h1>description</h1>
+
+            </div>
+            
             <Lesson />            
         </div>
     )

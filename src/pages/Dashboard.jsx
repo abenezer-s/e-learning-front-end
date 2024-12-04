@@ -4,11 +4,21 @@ function Dashboard(){
     return (
         <div className={styles.dashboard}>
             <h1>dashboard</h1>
-            <Link to="/"> Home </Link>
-            <Link to="/dashboard/myLearnings"> My learning</Link>
-            <Link to="/dashboard/myTeachings"> My teachings</Link>
-            <Link to="/dashboard/create"> Create </Link>
-            <button>applicants</button>
+            <Link to="/"> 
+                <button>Home</button>
+            </Link>
+            <Link to="/dashboard/myLearnings"> 
+                <button>My learning</button>
+            </Link>
+            <Link to="/dashboard/myTeachings"> 
+                <button>my teachings</button>
+            </Link>
+            <Link to="/dashboard/create">
+                <button>create</button> 
+             </Link>
+            <Link to="/dashboard/applications">
+                 <button>applications</button>
+            </Link>
             <Outlet />
         </div>
     )
