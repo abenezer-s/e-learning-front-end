@@ -1,6 +1,7 @@
-import Lesson from "../components/Lesson";
+import Learnings from "../components/Learnings";
 import ModuleOverview from "../components/ModuleOverview";
 import styles from "./CourseModule.module.css"
+import ContentListCont from "../components/ContentListCont";
 function CourseModule() {
     return (
         <div className={styles.courseModule}>
@@ -12,7 +13,8 @@ function CourseModule() {
 
             </div>
             
-            <Lesson />            
+            <Learnings />            
+            <ContentListCont content="learning items" />
         </div>
     )
 }

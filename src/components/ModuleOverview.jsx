@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import styles from "./ModuleOverview.module.css"
+import ContentListCont from './ContentListCont';
 
-function ModuleOverview(){
+function ModuleOverview({content}){
     return (
         <div className={styles.moduleOverview}>
                 <h1>module overview</h1>            
@@ -17,9 +18,10 @@ function ModuleOverview(){
                 </h2>
             </div>
 
-            {/* <Lesson /> */}
-            <Link to="/course/module/lesson"> Lesson  Item</Link>
-            {/* <Link to="/course/module/Quiz"> Lesson Item </Link> */}
+            {/* <Learnings /> */}
+            <Link to="/course/module/learningItem"> Learning Items</Link>
+            {/* <Link to="/course/module/Quiz"> Learnings Item </Link> */}
+            
             <Outlet />
             
             

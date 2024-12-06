@@ -6,7 +6,7 @@ function Course() {
     // A component to display a course's detail
     return (
         <div className={styles.Course}>
-            <button>edit course</button>
+            
             <div>
                 <h1>course name</h1>
                 <h1>description</h1>

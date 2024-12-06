@@ -1,6 +1,7 @@
 import styles from "./ContentOverview.module.css"
 import Footer from "./Footer";
 import Nav from "./navigation/Nav";
+import ContentListCont from "./ContentListCont";
 function ContentOverview({content}) {
     let message = "program";
     return (
@@ -9,6 +10,7 @@ function ContentOverview({content}) {
             {content === "course" ? message= "course": null}
             <h1>{message}</h1>
             <button>delete {message}</button>
+            <button>edit {message}</button>
             <div className={styles.providerLogo}> logo</div>
             <div className={styles.description}> description</div>
             <div className={styles.enrollButton}> 
@@ -16,8 +18,7 @@ function ContentOverview({content}) {
             </div>
             <div className={styles.about}> about </div>
             <div className={styles.contentList}>
-                 contentList 
-                 <button> delete a content</button>
+            <ContentListCont content={message === "course" ? "module" : "course" } />
             </div>
             <Footer />
 
