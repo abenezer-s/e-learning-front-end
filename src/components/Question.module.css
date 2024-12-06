@@ -1,0 +1,9 @@
+.question {
+    border: 3px dotted rgb(0, 13, 255);
+}
+
+.choice {
+
+    border: 4px dotted rgb(0, 255, 221);
+
+}

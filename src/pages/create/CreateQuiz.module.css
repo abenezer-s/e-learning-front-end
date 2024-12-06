@@ -1,20 +1,7 @@
 .createQuiz {
     border: 3px dotted blue;
 }
-.questions {
-    border: 1px solid blue;
-    background-color: grey;
-    color: white;
-    height: 50px;
 
-}
-.fields {
-    border: 3px dotted blue;
-
-}
-.choice {
-    border: 2px solid red;
-}
 
 .addToCourse {
     border: 1px solid blue;
