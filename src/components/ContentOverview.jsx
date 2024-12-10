@@ -34,7 +34,9 @@ function ContentOverview({content}) {
             </div>
             <div className={styles.about}> about </div>
             <div className={styles.contentList}>
-            <ContentListCont content={message === "course" ? "module" : "course" } />
+            
+            <ContentListCont content={message == "course" ? "module" : "program" } />
+
             </div>
             <Footer />
 

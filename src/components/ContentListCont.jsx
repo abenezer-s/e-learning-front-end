@@ -4,7 +4,11 @@ import styles from "./ContentListCont.module.css"
 import Applications from "../components/Applications";
 function ContentListCont({content}) {
     // A component to display a ContentListCont's detail
-    let path = ({content} == "course" ? "/course/module/" : "/course/" )
+    console.log(content)
+    let path = (content == "program" ? "/course/" :   
+                content == "module" ? "/course/module" :   
+                content ==  "learning items" ? "/course/module/learningItem": 
+                "/course/" )
     
     return (
         <div className={styles.contentListCont}>
@@ -12,8 +16,11 @@ function ContentListCont({content}) {
             <div>
                 <h1>{content} List</h1>
                 <ul>
-                    <Link to={ path }> {content} </Link>
-                    <button>delete</button>
+                    
+                    <li>
+                        <Link to={ path }> {content == "program" ? 'course' : content} </Link>
+                        <button>delete</button>
+                    </li>
                 </ul>
 
             </div>

@@ -73,7 +73,7 @@
     flex-direction: column;
     justify-content: left;
     width: 70%;
-    height: 37%;
+    height: 40%;
     color: #2652A3;
     align-items: left;
     text-align:left;
@@ -97,7 +97,9 @@
     font-weight: 100;
     color: #B59F78;
 }
-
+.joinTButt {
+    height: 40%;
+}
 .teachJoinButton {
     display: flex;
     /* background-color: #e0561f80; */

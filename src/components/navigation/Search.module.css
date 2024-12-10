@@ -1,4 +1,4 @@
-.mobile {
+.searchMobile {
     display: flex;
     position: relative;
     width: 40px;
@@ -24,12 +24,77 @@
     cursor: pointer;
 
 }
+.mobileSearchResults {
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 44px;
+    border:0.1px solid  #D8DBBD;
+    border-radius: 50px;
+    overflow:hidden;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+
+}
+.searchResInput{
+    display: block;
+    width: 90%;
+    height: 100%;
+    margin-right: auto;
+    padding: 4%;
+    border: none;
+    text-align: start;
+    font-size: large;
+    font-weight: 200;
+}
+
+.searchResButton{
+    position: absolute;
+    display: flex;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #5E75E6; */
+    background: transparent;
+    right: 6px;
+    cursor: pointer;
+
+}
+/* .mobileSearchButton  {
+    position: absolute;
+    display: flex;
+    border: none;
+    width: 60%;
+    height: 10%;
+    border-radius: 50px;
+    background:transparent;
+    cursor: pointer;
+    background-color: red;
+}
+.mobileSearchInput {
+    display: flex;
+    position: relative;
+    width: 350px;
+    height: 44px;
+    border:0.1px solid  #D8DBBD;
+    border-radius: 50px;
+    overflow:hidden;
+    justify-content: center;
+    align-items: center;
+
+} */
+
+
 
 @media (min-width:811px){
-    .mobile {
+    .searchMobile {
         display: none;
     }
-    .desktop {
+    .searchDesktop {
         display: flex;
         position: relative;
         width: 465px;

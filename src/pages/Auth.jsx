@@ -1,13 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from "./Auth.module.css"
 import Form from "./Form.jsx"
 function Auth() {
+    const location = useLocation()
+    let user = location.state;
+    console.log("USER IN AUTH", user)
     return (
         <div className={styles.auth}>
             
-            
             <div className={styles.signup}>
-                   <div className={styles.desc}> signup </div> 
+                    <div className={styles.desc}> 
+                        signup to {(user == "learner" ? "learn" : "teach")}
+                    </div> 
                 <div className={styles.button}>
                     <Link to="/"> 
                         <button >

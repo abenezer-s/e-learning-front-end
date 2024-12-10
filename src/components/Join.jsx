@@ -1,5 +1,8 @@
 import styles from "./Join.module.css"
+import JoinLearnButton from "./JoinLearnButton";
+import JoinTeachButton from "./JoinTeachButton";
 function Join() {
+    
     return (
         <div className={styles.join}>
             <div className={styles.learnOrTeach}>
@@ -12,11 +15,9 @@ function Join() {
                         your understanding and enhance your skills across various fields. 
                         Whether you're looking to deepen your expertise or explore new areas of interest, our comprehensive, 
                         knowledge-based and pracrical courses offer the perfect learning experience at your own pace.</p>
-                        <button className={styles.learnJoinButton}>
-                            <h1 className={styles.styledLearn}>
-                                Learn
-                            </h1>
-                        </button>
+                        <div className={styles.joinButt}>
+                            <JoinLearnButton />
+                        </div>
                 </div>
                 <div className={styles.books}>
 
@@ -29,9 +30,10 @@ function Join() {
                         courses and programs for others to learn from.
                         You can easily design and publish your courses for a broad range of audience.
                         Help others unlock new opportunities for growth and development.</p>
-                    <button className={styles.teachJoinButton}>
-                        Teach
-                    </button>
+                    <div className={styles.joinTButt}>
+                        <JoinTeachButton />
+                    </div>
+                    
                 </div>
 
             </div>
