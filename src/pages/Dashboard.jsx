@@ -13,7 +13,7 @@ function Dashboard(){
             <Link to="/dashboard/myTeachings"> 
                 <button>my teachings</button>
             </Link>
-            <Link to="/dashboard/create">
+            <Link to="/create">
                 <button>create</button> 
              </Link>
             <Link to="/dashboard/applications">

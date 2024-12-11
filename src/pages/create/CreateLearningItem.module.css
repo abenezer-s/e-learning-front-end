@@ -4,3 +4,7 @@
 .addLearningItem {
     color: blue;
 }
+
+.hide {
+    display: none;
+}

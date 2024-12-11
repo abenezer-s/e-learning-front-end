@@ -30,15 +30,15 @@ function App() {
           <Route path='myLearnings' element={<Learnings />} />
           <Route path='myTeachings' element={<Teachings />} />
           <Route path='applications' element={<Applications />} />
-          <Route path='create' element={<Create />}> 
+        </Route>
+      </Route>
+      <Route path='/create' element={<Create />}> 
             <Route path='program' element={<CreateProg />}/>
             <Route path='course' element={<CreateCourse />}/>
             <Route path='module' element={<CreateModule />}>
               <Route path='quiz' element={<CreateQuiz />} />
             </Route>
 
-          </Route>
-        </Route>
       </Route>
       
       <Route path='/auth' element={<Auth />} />
