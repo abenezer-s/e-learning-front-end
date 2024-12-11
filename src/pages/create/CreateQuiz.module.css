@@ -8,3 +8,15 @@
     background-color: grey;
     color: white;
 }
+
+.hide {
+    display: none;
+}
+
+.questions {
+    border: 1px solid blue;
+    background-color: grey;
+    color: white;
+    height: auto;
+
+}

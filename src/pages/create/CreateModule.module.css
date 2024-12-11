@@ -1,5 +1,5 @@
-.createProg {
-    border: 1px solid blue;
+.createModule {
+    border: 3px dotted blue;
 }
 
 .addToCourse {
@@ -7,3 +7,13 @@
     background-color: grey;
     color: white;
 }
+
+.moduleItem {
+    border: 1px solid red;
+    background-color: rgba(26, 255, 0, 0.105);
+}
+
+.hide {
+    display: none;
+}
+

@@ -1,17 +1,15 @@
 .createQues {
     border: 3px dotted red;
 }
-.questions {
-    border: 1px solid blue;
-    background-color: grey;
-    color: white;
-    height: 50px;
 
-}
 .fields {
     border: 3px dotted blue;
 
 }
 .choice {
     border: 2px solid red;
+}
+
+.hide {
+    display: none;
 }

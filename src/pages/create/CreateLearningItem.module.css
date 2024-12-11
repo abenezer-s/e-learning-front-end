@@ -4,3 +4,12 @@
 .addLearningItem {
     color: blue;
 }
+
+.readings {
+    border: 2px solid purple;
+    height: auto;
+}
+
+.hide {
+    display: none;
+}

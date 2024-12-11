@@ -1,42 +1,112 @@
 import styles from "./CreateModule.module.css"
 import { Link, Outlet } from "react-router-dom";
 import CreateLearningItem from "./CreateLearningItem";
+import { useState } from "react";
+import CreateQuiz from "./CreateQuiz";
 
 function CreateModule(){
+    const [clicked, setClicked] = useState({
+        createLearning:false,
+        createQuiz:false
+    });
+    // const [formData, setFormData] = useState({    });
+    const [moduleItem,setModuleItem] = useState({
+        items:[],
+    })
+    console.log("MODULE item", moduleItem)
+    const handleAddLearning = ()=> {
+        console.log("Clicke status", clicked.createLearning);
+        if (!clicked.createLearning){
+            console.log("HERE");
+            setClicked( 
+                prevState => (
+                    {
+                        ...prevState,
+                        createLearning:true,
+                    }
+                 ));
+        } else {
+            setClicked( 
+                prevState => (
+                    {
+                        ...prevState,
+                        createLearning:false,
+                    }
+                 ));
+        }
+    }
+    const handleAddQuiz = ()=> {
+        console.log("Clicke status", clicked.createLearning);
+        if (!clicked.createQuiz){
+            console.log("HERE");
+            setClicked( 
+                prevState => (
+                    {
+                        ...prevState,
+                        createQuiz:true,
+                    }
+                 ));
+        } else {
+            setClicked( 
+                prevState => (
+                    {
+                        ...prevState,
+                        createQuiz:false,
+                    }
+                 ));   
+        }
+    }
+    const handleChange = (event)=>{
+
+    }
+    const handleSubmit = (event)=>{
+
+    }
     return (
         <div className={styles.createModule}>
             <h1>Create a Module</h1>
-            <Link to="/dashboard/create"> back </Link>
+            <Link to="/create"> back </Link>
             <div className={styles.fields}>
-                <form >
-                    <input type="text" placeholder="modul's name"/>
-                    <input type="text" placeholder="description"/>
-                </form>
+            {console.log("BEFORE ADD LE clicked:", clicked.createLearning)}
+                <input type="text" placeholder="module's name"/>
+                <input type="text" placeholder="description"/>
 
                 <div>
                     <h2>add learning items(atleat one)</h2>
-                    <button>+</button>
-                    <div className={styles.addLearningItems}>
-                    <CreateLearningItem />
+                    <div className={styles.moduleItem}>
+                        <h3>learning items will be listed here</h3>
+                        { moduleItem.items.map((item, index)=>(
+                            // <p>{item.title} {item.type}</p>
+                            item.title ? <p> {item.title}</p> : <p>item does not have titel</p>
+                            
+                        ))}
+                        
                     </div>
-                    <div className={styles.quiz}> 
-                        <h2> create a quiz</h2>
-                        <Link to="/dashboard/create/module/quiz">
-                            <button>creat quiz</button>
-                        </Link>
+                    <button onClick={handleAddLearning}>
+                        ADD LE 
+                    </button>
+                    {clicked.createLearning ? 
+                        <CreateLearningItem 
+                            clicked={clicked} 
+                            setClicked={setClicked}
+                            setModuleItem={setModuleItem}/> :
+                            null}
+                    <div>
+                        <button onClick={handleAddQuiz}>Add quiz</button>
+                        <CreateQuiz 
+                            clicked={clicked} 
+                            setClicked={setClicked}
+                            setModuleItem={setModuleItem}
+                        />
                     </div>
-                    <Outlet />
                     <div  className={styles.addToCourse}>
                         <h2>add to course</h2>
                         choose from courses
                     </div>
-                    
-                    <button type="submit"> finish</button>
                 </div>
-                
-                
 
             </div>
+            <button> finish </button>
         </div>
     )
  }
