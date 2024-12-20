@@ -20,44 +20,54 @@ import CreateModule from './pages/create/CreateModule';
 import CreateQuiz from './pages/create/CreateQuiz';
 import Applications from './components/Applications';
 import LearningItem from './components/LearningItem';
+import { UserContextProvider } from './context/UserContext';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Routes>
-      <Route path='/' element={<Home />} > 
-        <Route path='/dashboard' element={<Dashboard />}> 
-          <Route path='myLearnings' element={<Learnings />} />
-          <Route path='myTeachings' element={<Teachings />} />
-          <Route path='applications' element={<Applications />} />
-        </Route>
-      </Route>
-      <Route path='/create' element={<Create />}> 
-            <Route path='program' element={<CreateProg />}/>
-            <Route path='course' element={<CreateCourse />}/>
-            <Route path='module' element={<CreateModule />}>
-              <Route path='quiz' element={<CreateQuiz />} />
+    <>
+      <UserContextProvider>
+      <Routes>
+          <Route path='/' element={<Home />} > 
+            <Route path='/dashboard' element={<Dashboard />}> 
+              <Route path='myLearnings' element={<Learnings />} />
+              <Route path='myTeachings' element={<Teachings />} />
+              <Route path='applications' element={<Applications />} />
             </Route>
+          </Route>
+        </Routes>
 
-      </Route>
-      
-      <Route path='/auth' element={<Auth />} />
-      <Route path='/course' element={<Course />}>
-      
-        <Route path='module' element={<CourseModule />} >
-          <Route path='learningItem' element={<LearningItem />} />
+      <Routes>
+        <Route path='/create' element={<Create />}> 
+              <Route path='program' element={<CreateProg />}/>
+              <Route path='course' element={<CreateCourse />}/>
+              <Route path='module' element={<CreateModule />}>
+                <Route path='quiz' element={<CreateQuiz />} />
+              </Route>
+
         </Route>
+      
+        <Route path='/auth' element={<Auth />} />
+        <Route path='/course' element={<Course />}>
 
-      </Route>
-      <Route path="*" element={<NotFound />} /> 
-      <Route path='/about' element={<About />} />
-      <Route path='/search' element={<SearchResults />} />
+          <Route path='module' element={<CourseModule />} >
+            <Route path='learningItem' element={<LearningItem />} />
+          </Route>
+
+        </Route>
+        <Route path="*" element={<NotFound />} /> 
+        <Route path='/about' element={<About />} />
+        <Route path='/search' element={<SearchResults />} />
+
+        <Route path='/program-overview' element={<ContentOverview content="program" />} />
+        <Route path='/course-overview' element={<ContentOverview content="course"/>} />
       
-      <Route path='/program-overview' element={<ContentOverview content="program" />} />
-      <Route path='/course-overview' element={<ContentOverview content="course"/>} />
-      
-    </Routes>
-    
+      </Routes>
+
+
+      </UserContextProvider>
+        
+    </>    
   );
 }
 

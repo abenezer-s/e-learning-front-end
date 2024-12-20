@@ -15,9 +15,9 @@ function Create(){
             <Link to="/create/course">
                 <button> create a course</button>
             </Link>
-            <Link to="/create/module">
+            {/* <Link to="/create/module">
                 <button> create a module</button>
-            </Link>
+            </Link> */}
 
             <Outlet />
         </div>

@@ -2,8 +2,11 @@
     border: 1px solid blue;
 }
 
-.addModule {
+.createModule {
     border: 1px solid blue;
-    background-color: grey;
-    color: white;
+    background-color: rgba(116, 115, 115, 0.137);
+}
+
+.hide {
+    display: none;
 }

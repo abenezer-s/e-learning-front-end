@@ -14,11 +14,11 @@
     flex-direction: column;
     border: 1px solid black;
     width: 90%;
-    height: 90%;
+    height: auto;
 
 }
 
-.signup {
+.head {
     display: flex;
     /* border: 1px solid red; */
     width: 90%;
@@ -51,6 +51,9 @@
 .image {
     display: none;
 }
+.hide{
+    display: none;
+}
 
 @media (min-width:768px){
     .auth {
@@ -72,7 +75,7 @@
         overflow: hidden;
     }
     
-    .signup {
+    .head {
         justify-self: center;
         width: 80%;
         margin-top: 0;

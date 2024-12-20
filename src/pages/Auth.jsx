@@ -1,16 +1,21 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from "./Auth.module.css"
 import Form from "./Form.jsx"
+import {UserContextProvider} from '../context/UserContext.jsx';
 function Auth() {
     const location = useLocation()
-    let user = location.state;
-    console.log("USER IN AUTH", user)
+    const user = location.state;
+    const type = location.state;
+
+    console.log("TYPE", type)
     return (
         <div className={styles.auth}>
             
-            <div className={styles.signup}>
+            <div className={styles.head}>
                     <div className={styles.desc}> 
-                        signup to {(user == "learner" ? "learn" : "teach")}
+                        {(user == "learner" ? "signup to learn" :   
+                         user == "teacher" ? "signup to teach" :
+                         "sign in")}
                     </div> 
                 <div className={styles.button}>
                     <Link to="/"> 
@@ -21,15 +26,16 @@ function Auth() {
                 </div>
             </div>
             <div className={styles.authCard}>
-                
-                <Form />
+                    <Form state={type}/>
                 <div className={styles.image}>
                     <img src="/src/assets/img/istockphoto-2158169480-1024x1024.jpg" alt="sign up image" />
 
                 </div>
             </div>
            
+            <div className={styles.signIn}>
 
+            </div>
         </div>
     )
 }

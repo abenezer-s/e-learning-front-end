@@ -17,6 +17,9 @@
     overflow: hidden;
 
 }
+.hide {
+    display: none;
+}
 
 .inputs button {
     width: 100%;

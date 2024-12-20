@@ -4,13 +4,15 @@ import CreateLearningItem from "./CreateLearningItem";
 import { useState } from "react";
 import CreateQuiz from "./CreateQuiz";
 
-function CreateModule(){
+function CreateModule({setCourseItem}){
     const [clicked, setClicked] = useState({
         createLearning:false,
         createQuiz:false
     });
     // const [formData, setFormData] = useState({    });
     const [moduleItem,setModuleItem] = useState({
+        title:'',
+        description:'',
         items:[],
     })
     console.log("MODULE item", moduleItem)
@@ -57,9 +59,21 @@ function CreateModule(){
         }
     }
     const handleChange = (event)=>{
-
+        const {name, value} = event.target;
+        setModuleItem(
+            prevState => ({
+                ...prevState,
+                [name]:value,
+            })
+        )
     }
-    const handleSubmit = (event)=>{
+    const handleFinish = ()=>{
+        setCourseItem(
+            prevState => ({
+                ...prevState,
+                modules:[...prevState.modules, moduleItem],
+            })
+        )
 
     }
     return (
@@ -68,10 +82,20 @@ function CreateModule(){
             <Link to="/create"> back </Link>
             <div className={styles.fields}>
             {console.log("BEFORE ADD LE clicked:", clicked.createLearning)}
-                <input type="text" placeholder="module's name"/>
-                <input type="text" placeholder="description"/>
-
+                <input 
+                    onChange={handleChange}
+                    name="title"
+                    value={moduleItem.title}
+                    type="text" 
+                    placeholder="module's title"/>
+                <input 
+                    onChange={handleChange}
+                    name="description"
+                    value={moduleItem.description}
+                    type="text" 
+                    placeholder="description"/>
                 <div>
+
                     <h2>add learning items(atleat one)</h2>
                     <div className={styles.moduleItem}>
                         <h3>learning items will be listed here</h3>
@@ -99,14 +123,10 @@ function CreateModule(){
                             setModuleItem={setModuleItem}
                         />
                     </div>
-                    <div  className={styles.addToCourse}>
-                        <h2>add to course</h2>
-                        choose from courses
-                    </div>
                 </div>
 
             </div>
-            <button> finish </button>
+            <button onClick={handleFinish} > finished with module </button>
         </div>
     )
  }
