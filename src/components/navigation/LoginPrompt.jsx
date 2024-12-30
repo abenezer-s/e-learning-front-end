@@ -1,15 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./LoginPrompt.module.css"
-import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
 import axios from "axios";
+
 function LoginPrompt() {
-    const {user, updateLogin, updateType} = useContext(UserContext);
-    const loggedIn = user.loggedIn;
+    let storedUser = JSON.parse(localStorage.getItem('user'));
+    console.log("parsed OBJECT", storedUser);
+    const loggedIn = storedUser.loggedIn;
     const navigate = useNavigate();
-    const handleLogin = (user)=> {
+    const handleLogin = (storedUser)=> {
         if(loggedIn){
-            
             const logOut = async ()=>{
                 const response = await axios.post('/api/users/logout/', {
                     withCredentials: true
@@ -17,23 +16,30 @@ function LoginPrompt() {
                 console.log(`LOGGED OUT`);
             }
             logOut();
-            updateLogin(false);
-            updateType(false);
+            storedUser.isCreator = null;
+            storedUser.loggedIn = false;
+            localStorage.setItem('user', JSON.stringify(storedUser));
+            console.log("user object", storedUser);
+            window.location.reload();
+            navigate('/');
         }else {
             navigate('/auth',{state:"signIn"});
         }
     }
     const handleJoin = ()=> {
-        navigate("/auth", {state:"learner"})
+        navigate("/auth", {state:"learner"});
     }
     return (
         <div className={styles.loginPrompt}>
-            <button onClick={handleLogin} className={styles.login}>
-                {user.loggedIn ? "Log out" : "log in"}
+            <button onClick={()=>{handleLogin(storedUser)}} className={styles.login}>
+                {storedUser.loggedIn ? "Log out" : "log in"}
             </button>
-            <button onClick={handleJoin} className={styles.joinPrompt}>
-                Join For Free
-            </button>
+            <div className={ storedUser.loggedIn ? styles.hide : null}>
+                <button onClick={handleJoin} className={styles.joinPrompt}>
+                    Join For Free
+                </button>
+            </div>
+            
         </div>
     );
   }

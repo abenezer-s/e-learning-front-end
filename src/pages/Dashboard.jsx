@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import styles from "./Dashboard.module.css"
 import { Link, Outlet} from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+
 function Dashboard(){
-    const {user, updateType, updateLogin} = useContext(UserContext);
-    const creator = user.isCreator;
-    const loggedIn = user.loggedIn;
-    console.log("user context in DASHBOARD",user);
+    let storedUser = JSON.parse(localStorage.getItem('user'));
+    const creator = storedUser.isCreator;
+    const loggedIn = storedUser.loggedIn;
+    console.log("user context -> js object, in DASHBOARD",storedUser);
 
     return (
         <div className={loggedIn ? styles.dashboard : styles.hide}>

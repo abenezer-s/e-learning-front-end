@@ -2,11 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./Form.module.css"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+
 function Form({state}) {
-    console.log('FORM RENDERED state:', state);
+    const [user, setUser] = useState({});
     const navigate = useNavigate();
-    const {user, updateType, updateLogin} = useContext(UserContext);
+    console.log('FORM RENDERED state:', state);
+
     const [formData, setFormData] = useState({
             username:'',
             first_name:'',
@@ -25,13 +26,15 @@ function Form({state}) {
         console.log('Updated user:', user);
         console.log('user logged in:', user.loggedIn);
         if(user.loggedIn){
+            console.log("NAVIAGTING TO DASHBOARD")
             navigate('/dashboard');
         }
     }, [user]); // This effect runs whenever UserCreator changes
 
     const handleSubmit = async (event)=>{
         event.preventDefault(); 
-        
+        let storedUser = JSON.parse(localStorage.getItem('user'));
+        console.log("STORED USER in FORM",storedUser);
         if(state == "signIn"){
             console.log(`user name ${formData.username} password ${formData.password}`);
             try{
@@ -43,12 +46,14 @@ function Form({state}) {
                 const {access, refresh, creator} = response.data;
                 console.log('received access TOKEN', access);
                 console.log('CREATOR', creator);
-                updateType(creator);
-                updateLogin(true);
-                console.log("user state inside", user);
-
+                storedUser.isCreator = creator;
+                storedUser.loggedIn = true;
+                localStorage.setItem('user', JSON.stringify(storedUser));
+                const updatedUser = JSON.parse(localStorage.getItem('user'));
+                setUser(storedUser);
+                console.log(`stored updated to ${updatedUser} and  user state${user}`);
             }catch (error){
-                console.log('error', error.response.data);
+                console.log('error', error);
                 console.log()
             }
         } else {

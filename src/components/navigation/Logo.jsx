@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "./Logo.module.css"
-import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+
 function Logo() {
-    const {user} = useContext(UserContext);
+    let user = JSON.parse(localStorage.getItem('user'));
     const loggedIn = user.loggedIn;
     return (  
         <div className={styles.logo}> 

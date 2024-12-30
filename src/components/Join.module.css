@@ -1,3 +1,6 @@
+.hide {
+    display: none;
+}
 .join {
     display: flex;
     flex-direction: column;

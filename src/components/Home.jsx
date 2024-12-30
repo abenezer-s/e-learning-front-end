@@ -9,7 +9,6 @@ import SideNavBar from "./navigation/SideNavBar";
 import NewSection from "./NewSection";
 import { Outlet } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
-import { UserContextProvider } from "../context/UserContext";
 
 function Home() {
     return (

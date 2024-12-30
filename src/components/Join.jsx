@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import styles from "./Join.module.css"
 import JoinLearnButton from "./JoinLearnButton";
 import JoinTeachButton from "./JoinTeachButton";
+
 function Join() {
-    
+    // parsed json, user object from loal storage
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log("user object in JOIN", user);
     return (
-        <div className={styles.join}>
+        <div className={user.loggedIn ? styles.hide : styles.join}>
+            {console.log("LOGGED IN?",user.loggedIn)}
             <div className={styles.learnOrTeach}>
                 <div className={styles.learnJoin}>
                         

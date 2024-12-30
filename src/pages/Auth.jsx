@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from "./Auth.module.css"
 import Form from "./Form.jsx"
-import {UserContextProvider} from '../context/UserContext.jsx';
+
 function Auth() {
     const location = useLocation()
     const user = location.state;

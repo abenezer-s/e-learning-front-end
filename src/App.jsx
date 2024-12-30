@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Home from "./components/Home";
 import Auth from "./pages/Auth"
 import Course from "./pages/Course"
@@ -20,13 +20,18 @@ import CreateModule from './pages/create/CreateModule';
 import CreateQuiz from './pages/create/CreateQuiz';
 import Applications from './components/Applications';
 import LearningItem from './components/LearningItem';
-import { UserContextProvider } from './context/UserContext';
+
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect (()=>{
+    const user = {
+      isCreator: null,
+      loggedIn: null,
+    };
+    localStorage.setItem('user', JSON.stringify(user));
+  }, [])
 
   return (
     <>
-      <UserContextProvider>
       <Routes>
           <Route path='/' element={<Home />} > 
             <Route path='/dashboard' element={<Dashboard />}> 
@@ -62,11 +67,7 @@ function App() {
         <Route path='/program-overview' element={<ContentOverview content="program" />} />
         <Route path='/course-overview' element={<ContentOverview content="course"/>} />
       
-      </Routes>
-
-
-      </UserContextProvider>
-        
+      </Routes>        
     </>    
   );
 }

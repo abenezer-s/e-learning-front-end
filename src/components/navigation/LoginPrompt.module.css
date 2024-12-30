@@ -1,3 +1,6 @@
+.hide {
+    display: none;
+}
 .loginPrompt {
     display: flex;
     flex-direction: column;
